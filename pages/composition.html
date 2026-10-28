@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TACHKILA</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="index.js" defer></script>
+</head>
+
+<body class="bg-black border border-red-500 rounded p-2 md:p-5 text-red-50 min-h-screen flex flex-col font-sans gap-3">
+
+    <!-- HEADER diri lih export mn index.html o 3ndak tnsay add nav bar  -->
+
+
+    <!-- SIDEBAR ET TERRAIN -->
+
+    <div class="flex flex-1 flex-col md:flex-row min-h-0 md:h-[calc(100vh-120px)] md:overflow-hidden gap-3">
+
+        <!-- SIDEBAR -->
+
+        <aside class="w-full md:w-[250px] md:min-w-[250px] md:shrink-0 md:h-full md:overflow-y-auto overflow-x-hidden bg-black border border-red-500 rounded p-2 md:p-5 flex flex-col gap-3">
+
+
+            <!-- EFFECTIF -->
+
+            <div class="bg-black border border-red-500 rounded p-2 md:p-3 flex justify-between items-center gap-2 text-xs font-semibold">
+
+                <h2 class="bg-black border border-red-500 rounded p-2">
+                    Effectif
+                </h2>
+
+                <span
+                    id="nombre-joueurs"
+                    class="bg-black border border-red-500 rounded p-2 text-white">
+
+                    1 joueur(s)
+
+                </span>
+
+            </div>
+
+            <p class="bg-black border border-red-500 rounded p-2 md:p-3 text-xs text-[#94a3b8]">
+                Cliquez sur un joueur placé pour voir sa case sur le terrain.
+            </p>
+
+            <!-- LISTE DES JOUEURS -->
+
+            <div id="liste-joueurs" class="flex flex-col gap-2">
+
+                <div class="bg-black border border-red-500 rounded p-2 md:p-3 overflow-hidden">
+
+                    <div class="flex flex-wrap justify-between items-center gap-2 p-1 md:p-2">
+
+                        <!-- INFORMATIONS DU JOUEUR -->
+
+                        <div class="bg-black border border-red-500 rounded p-2 min-w-0">
+
+                            <strong class="text-sm text-[#cbd5e1]">
+                                Nom du joueur
+                            </strong>
+
+                            <p class="text-xs text-amber-500">
+                                Gardien
+                            </p>
+
+                        </div>
+
+                        <!-- BOUTONS -->
+
+                        <div class="flex flex-wrap gap-2">
+
+                            <button
+                                type="button"
+                                class="bg-black border border-red-500 rounded p-2 text-xs text-blue-400 hover:bg-red-950">
+                                Modifier
+                            </button>
+
+                            <button
+                                type="button"
+                                class="bg-black border border-red-500 rounded p-2 text-xs text-white hover:bg-red-950">
+                                Supprimer
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                    <!-- POSITION DU JOUEUR -->
+
+                    <div class="bg-black border border-red-500 rounded p-2 mt-2">
+
+                        <label class="block text-xs text-[#cbd5e1] mb-2">
+                            Position sur le terrain
+                        </label>
+
+                        <select class="w-full bg-black border border-red-500 rounded p-2 text-white text-xs">
+
+                            <option value="">Sur le banc</option>
+                            <option value="GB">GB - Gardien</option>
+                            <option value="DG">DG - Défenseur gauche</option>
+                            <option value="DC1">DC - Défenseur central 1</option>
+                            <option value="DC2">DC - Défenseur central 2</option>
+                            <option value="DD">DD - Défenseur droit</option>
+                            <option value="MG">MG - Milieu gauche</option>
+                            <option value="MC1">MC - Milieu central 1</option>
+                            <option value="MC2">MC - Milieu central 2</option>
+                            <option value="MD">MD - Milieu droit</option>
+                            <option value="BU1">BU - Buteur 1</option>
+                            <option value="BU2">BU - Buteur 2</option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </aside>
+
+        <!-- TERRAIN -->
+
+        <main class="bg-black border border-red-500 rounded p-2 md:p-5 flex-1 min-w-0 overflow-auto">
+
+            <div id="message-position" hidden></div>
+            <div id="message-post" hidden></div>
+
+            <div class="terrain">
+
+                <div class="Gardien">
+                    <h3>Gardien</h3>
+                </div>
+
+                <div class="Défenseur-gauche">
+                    <h3>Défenseur gauche</h3>
+                </div>
+
+                <div class="Défenseur-central-1">
+                    <h3>Défenseur central 1</h3>
+                </div>
+
+                <div class="Défenseur-central-2">
+                    <h3>Défenseur central 2</h3>
+                </div>
+
+                <div class="Défenseur-droit">
+                    <h3>Défenseur droit</h3>
+                </div>
+
+                <div class="Milieu-gauche">
+                    <h3>Milieu gauche</h3>
+                </div>
+
+                <div class="Milieu-central-1">
+                    <h3>Milieu central 1</h3>
+                </div>
+
+                <div class="Milieu-central-2">
+                    <h3>Milieu central 2</h3>
+                </div>
+
+                <div class="Milieu-droit">
+                    <h3>Milieu droit</h3>
+                </div>
+
+                <div class="Buteur-1">
+                    <h3>Buteur 1</h3>
+                </div>
+
+                <div class="Buteur-2">
+                    <h3>Buteur 2</h3>
+                </div>
+
+            </div>
+
+        </main>
+
+    </div>
+
+    <!-- MODAL -->
+
+    <div id="modal" hidden class="modal">
+
+        <div class="modal-contenu">
+
+            <div class="modal-header">
+
+                <h2>Ajouter un joueur</h2>
+
+                <button
+                    type="button"
+                    id="fermer"
+                    class="fermer">
+                    x
+                </button>
+
+            </div>
+
+            <!-- FORMULAIRE -->
+
+            <form id="form-joueur">
+
+                <div class="groupe-champ">
+                    <label for="nom">Nom complet :</label>
+                    <input type="text" id="nom" name="nom" required>
+                </div>
+
+                <div class="groupe-champ">
+                    <label for="poste">Poste :</label>
+
+                    <select id="poste" name="poste" required>
+                        <option value="">Choisir un poste</option>
+                        <option value="GB">Gardien</option>
+                        <option value="DEF">Défenseur</option>
+                        <option value="MIL">Milieu</option>
+                        <option value="ATT">Attaquant</option>
+                    </select>
+                </div>
+
+                <div class="groupe-champ">
+                    <label for="numero">Numéro :</label>
+
+                    <input
+                        type="number"
+                        id="numero"
+                        name="numero"
+                        min="1"
+                        max="99"
+                        required>
+                </div>
+
+                <!-- BOUTONS -->
+
+                <div class="modal-boutons">
+
+                    <button type="submit" class="btn-ajouter">
+                        Ajouter
+                    </button>
+
+                    <button type="button" id="annuler" class="btn-annuler">
+                        Annuler
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

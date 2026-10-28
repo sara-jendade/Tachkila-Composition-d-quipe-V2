@@ -1,0 +1,297 @@
+.menu{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: red;
+}
+
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 50;
+    box-sizing: border-box;
+}
+
+.modal-contenu {
+    width: 100%;
+    max-width: 448px;
+    padding: 24px;
+    background-color : black;
+    border: 1px solid hwb(0 0% 4%);
+    border-radius: 12px;
+    box-shadow: 0 10px 15px hsl(0, 100%, 50%);
+    box-sizing: border-box;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.modal-header h2 {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.fermer {
+    color: hwb(0 0% 1%);
+    font-size: 24px;
+    cursor: pointer;
+    background: none;
+}
+
+.fermer:hover {
+    color: white;
+}
+
+.groupe-champ {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.groupe-champ label {
+    font-size: 14px;
+    color: #cbd5e1;
+}
+
+.groupe-champ input,
+.groupe-champ select {
+    width: 100%;
+    padding: 12px;
+    background-color: black;
+    border: 1px solid hwb(0 0% 4%);
+    border-radius: 8px;
+    color: white;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+.groupe-champ input:focus,
+.groupe-champ select:focus {
+    border-color: hsl(0, 100%, 50%);
+    outline: none;
+}
+
+.modal-boutons {
+    display: flex;
+    gap: 12px;
+    margin-top: 8px;
+}
+
+.modal-boutons button {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btn-ajouter {
+    background-color: hsl(0, 100%, 50%);
+}
+
+.btn-ajouter:hover {
+    background-color: hsl(0, 74%, 27%);
+}
+
+.btn-annuler {
+    background-color: #500707;
+}
+
+.btn-annuler:hover {
+    background-color: hsl(0, 74%, 27%);
+}
+
+.terrain {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    grid-template-rows: repeat(9, minmax(0, 1fr));
+    gap: 7px;
+    width: 100%;
+    height: 100%;
+    min-height: 500px;
+    box-sizing: border-box;
+    background-position: center;
+}
+
+.Gardien {
+    grid-row: 4 / 7;
+    grid-column: 1 / 3;
+    background-color: #00000000;
+    border: 1px solid hwb(0 0% 4%) ;
+    border-radius: 8px;
+    box-shadow: 0 5px 8px hsl(0, 100%, 50%);
+}
+
+.Défenseur-gauche {
+    grid-row: 2;
+    grid-column: 4 / 6;
+}
+
+.Défenseur-central-1 {
+    grid-row: 4;
+    grid-column: 3 / 5;
+}
+
+.Défenseur-central-2 {
+    grid-row: 6;
+    grid-column: 3 / 5;
+}
+
+.Défenseur-droit {
+    grid-row: 8;
+    grid-column: 4 / 6;
+}
+
+.Défenseur-gauche,
+.Défenseur-central-1,
+.Défenseur-central-2,
+.Défenseur-droit {
+    background-color: #491616b3;
+    border: 1px solid hwb(0 0% 4%) ;
+    border-radius: 8px;
+    box-shadow: 0 5px 8px hsl(0, 100%, 50%);
+}
+
+.Milieu-gauche {
+    grid-row: 2;
+    grid-column: 8 / 10;
+}
+
+.Milieu-central-1 {
+    grid-row: 4;
+    grid-column: 7 / 9;
+}
+
+.Milieu-central-2 {
+    grid-row: 6;
+    grid-column: 7 / 9;
+}
+
+.Milieu-droit {
+    grid-row: 8;
+    grid-column: 8 / 10;
+}
+
+.Milieu-gauche,
+.Milieu-central-1,
+.Milieu-central-2,
+.Milieu-droit {
+    background-color: hsla(0, 64%, 21%, 0.788);
+    border: 1px solid hwb(0 0% 4%) ;
+    border-radius: 8px;
+    box-shadow: 0 5px 8px hsl(0, 100%, 50%);
+}
+
+.Buteur-1 {
+    grid-row: 4;
+    grid-column: 10 / 12;
+}
+
+.Buteur-2 {
+    grid-row: 6;
+    grid-column: 10 / 12;
+}
+
+.Buteur-1,
+.Buteur-2 {
+    background-color: hsla(0, 91%, 26%, 0.731);
+    border: 1px solid hwb(0 0% 4%) ;
+    border-radius: 8px;
+    box-shadow: 0 5px 8px hsl(0, 100%, 50%);
+}
+
+.terrain > div {
+    min-width: 0;
+    min-height: 0;
+    color: white;
+    font-size: 12px;
+    text-align: center;
+    overflow: hidden;
+    overflow-wrap: break-word;
+    box-sizing: border-box;
+}
+
+.terrain h3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 4px;
+    font-size: 12px;
+    font-weight: normal;
+    border: 1px solid hwb(0 0% 4%) ;
+}
+
+
+.terrain p {
+    margin: 4px;
+    font-size: 12px;
+    font-weight: bold;
+    border: 1px solid hwb(0 0% 4%) ;
+}
+
+@media (max-width: 767px) {
+
+    .terrain > div {
+        min-width: 0;
+        overflow: hidden;
+        overflow-wrap: anywhere;
+    }
+
+    .terrain h3 {
+        font-size: 9px;
+        margin: 2px;
+        overflow-wrap: anywhere;
+    }
+
+    .terrain p {
+        font-size: 9px;
+        margin: 2px;
+        overflow-wrap: anywhere;
+    }
+
+}
+
+.message-position,
+.message-post {
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 8px;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.message-position {
+    background-color: oklch(62.793% 0.25768 29.223 / 0.385);
+    color: hsl(0, 27%, 98%);
+    border: 1px solid hsl(0, 100%, 50%);
+}
+
+.message-post {
+    background-color: oklch(62.793% 0.25768 29.223 / 0.385);
+    color: #fef3c7;
+    border: 1px solid hsl(0, 92%, 50%);
+}
+
+@media (min-width: 768px) {
+    body {
+        height: 100vh;
+        overflow: hidden;
+    }
+}
