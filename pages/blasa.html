@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TACHKILA</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="../Tachkila-Composition-d-quipe-V2/DOM/matches.js"></script>
+    <script type="module" src="../Tachkila-Composition-d-quipe-V2/DOM/players.js"></script>
+    <script type="module" src="../Tachkila-Composition-d-quipe-V2/DOM/storage.js"></script>
+    <script type="module" src="../Tachkila-Composition-d-quipe-V2/DOM/main.js"></script>
+
+
+
+</head>
+
+<body class="min-h-screen flex flex-col gap-3 bg-black p-2 font-sans text-red-50 md:p-5">
+
+    <!-- lheader hna howa o nax bar -->
+
+    <div id="header"></div>
+    <script type="module" src="../Tachkila-Composition-d-quipe-V2/DOM/main.js"></script>
+
+    <main class="flex-1">
+
+            <div class="bg-black border border-red-500 rounded p-2 md:p-3 flex justify-between items-center gap-2 text-xs font-semibold">
+
+                <h2 class="bg-black border border-red-500 rounded p-2">
+                    Effectif
+                </h2>
+
+                <span
+                    id="nombre-joueurs"
+                    class="bg-black border border-red-500 rounded p-2 text-white">
+
+                    1 joueur(s)
+
+                </span>
+
+            </div>
+            <button
+
+                type="button"
+                id="ouvrir"
+                class="w-full bg-black border border-red-500 rounded p-2 md:p-3 hover:bg-red-950 text-white font-semibold text-xs md:text-sm">
+
+                + Ajouter un joueur
+
+            </button>
+    </main>
+
+</body>
+</html>

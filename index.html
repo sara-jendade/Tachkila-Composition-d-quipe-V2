@@ -9,34 +9,125 @@
 
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="style.css">
-    <script src="index.js" defer></script>
+    <script type="module" src="../Tachkila-Composition-d-quipe-V2/DOM/matches.js"></script>
+    <script type="module" src="../Tachkila-Composition-d-quipe-V2/DOM/players.js"></script>
+    <script type="module" src="../Tachkila-Composition-d-quipe-V2/DOM/storage.js"></script>
+
+
 </head>
 
-<body class="bg-black border border-red-500 rounded p-2 md:p-5 text-red-50 min-h-screen flex flex-col font-sans gap-3">
+<body class="min-h-screen flex flex-col gap-3 bg-black p-2 font-sans text-red-50 md:p-5">
 
     <!-- HEADER -->
+     
+    <div id="header"></div>
+    <script type="module" src="../Tachkila-Composition-d-quipe-V2/DOM/main.js"></script>
 
-    <header class="bg-black border border-red-500 rounded p-2 md:p-5 flex items-center justify-between gap-2">
+    <main class="flex-1">
 
-        <div class="flex items-center gap-2 md:gap-3 min-w-0">
-            <h1 class="text-lg md:text-xl font-bold">TACHKILA</h1>
-        </div>
+        <!-- haya lmain  dyal hna khas n3amrha -->
 
-        <span class="text-xs md:text-sm text-[#cbd5e1] text-right">
-            Formation 4-4-2
-        </span>
-        <nav aria-label="Navigation principale">
-        <ul class="menu">
-          <li><a href="../Tachkila-Composition-d-quipe-V2/pages/effectif.html" class="lien-actif"> EFFECTIF </a></li>
-          <li><a href="../Tachkila-Composition-d-quipe-V2/pages/composition.html"> COMPOSITIONS </a></li>
-          <li><a href="../Tachkila-Composition-d-quipe-V2/pages/matches.html"> COMPOSITIONS </a></li>
-        </ul>
-      </nav>
+         <!-- SIDEBAR ET TERRAIN -->
 
-    </header>
+    <div class="flex flex-1 flex-col md:flex-row min-h-0 md:h-[calc(100vh-120px)] md:overflow-hidden gap-3">
+        
+            <!-- EFFECTIF -->
 
-<!--- zidi hna nav bar --->>
+            <div class="bg-black border border-red-500 rounded p-2 md:p-3 flex justify-between items-center gap-2 text-xs font-semibold">
+
+                <h2 class="bg-black border border-red-500 rounded p-2">
+                    Effectif
+                </h2>
+
+                <span
+                    id="nombre-joueurs"
+                    class="bg-black border border-red-500 rounded p-2 text-white">
+
+                    1 joueur(s)
+
+                </span>
+
+            </div>
+
+            <p class="bg-black border border-red-500 rounded p-2 md:p-3 text-xs text-[#94a3b8]">
+                Cliquez sur un joueur placé pour voir sa case sur le terrain.
+            </p>
+
+            <!-- LISTE DES JOUEURS -->
+
+            <div id="liste-joueurs" class="flex flex-col gap-2">
+
+                <div class="bg-black border border-red-500 rounded p-2 md:p-3 overflow-hidden">
+
+                    <div class="flex flex-wrap justify-between items-center gap-2 p-1 md:p-2">
+
+                        <!-- INFORMATIONS DU JOUEUR  , hna fin khasni nzid status dyalo -->
+
+                        <div class="bg-black border border-red-500 rounded p-2 min-w-0">
+
+                            <strong class="text-sm text-[#cbd5e1]">
+                                Nom du joueur
+                            </strong>
+
+                            <p class="text-xs text-amber-500">
+                                Gardien
+                            </p>
+
+                        </div>
+
+                        <!-- BOUTONS -->
+
+                        <div class="flex flex-wrap gap-2">
+
+                            <button
+                                type="button"
+                                class="bg-black border border-red-500 rounded p-2 text-xs text-blue-400 hover:bg-red-950">
+                                Modifier
+                            </button>
+
+                            <button
+                                type="button"
+                                class="bg-black border border-red-500 rounded p-2 text-xs text-white hover:bg-red-950">
+                                Supprimer
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                    <!-- POSITION DU JOUEUR -->
+
+                    <div class="bg-black border border-red-500 rounded p-2 mt-2">
+
+                        <label class="block text-xs text-[#cbd5e1] mb-2">
+                            Position sur le terrain
+                        </label>
+
+                        <select class="w-full bg-black border border-red-500 rounded p-2 text-white text-xs">
+
+                            <option value="">Sur le banc</option>
+                            <option value="GB">GB - Gardien</option>
+                            <option value="DG">DG - Défenseur gauche</option>
+                            <option value="DC1">DC - Défenseur central 1</option>
+                            <option value="DC2">DC - Défenseur central 2</option>
+                            <option value="DD">DD - Défenseur droit</option>
+                            <option value="MG">MG - Milieu gauche</option>
+                            <option value="MC1">MC - Milieu central 1</option>
+                            <option value="MC2">MC - Milieu central 2</option>
+                            <option value="MD">MD - Milieu droit</option>
+                            <option value="BU1">BU - Buteur 1</option>
+                            <option value="BU2">BU - Buteur 2</option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </aside>
+    </main>
 
 </body>
-
 </html>
