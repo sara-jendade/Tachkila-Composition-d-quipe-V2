@@ -15,3 +15,20 @@ function afficherHeader() {
 }
 
 afficherHeader();
+
+const ouvrir = document.getElementById("ouvrir");
+const fermer = document.getElementById("fermer");
+const annuler = document.getElementById("annuler");
+const modal = document.getElementById("modal");
+
+ouvrir.addEventListener("click", () => {
+    modal.hidden = false;
+});
+
+fermer.addEventListener("click", () => {
+    modal.hidden = true;
+});
+
+annuler.addEventListener("click", () => {
+    modal.hidden = true;
+});
