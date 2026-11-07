@@ -1,0 +1,96 @@
+.modal {
+    position: fixed;
+    inset: 0;
+    z-index: 50;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    padding: 16px;
+    background: rgb(0 0 0 / 75%);
+}
+
+.modal[hidden] {
+    display: none;
+}
+
+.modal-contenu {
+    width: 100%;
+    max-width: 448px;
+    padding: 24px;
+    background: #000;
+    border: 1px solid #ef4444;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgb(239 68 68 / 25%);
+    box-sizing: border-box;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.modal-header h2 {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.fermer {
+    color: #ef4444;
+    font-size: 24px;
+    cursor: pointer;
+    background: none;
+}
+
+.fermer:hover { color: white; }
+
+.groupe-champ {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.groupe-champ label { font-size: 14px; color: #cbd5e1; }
+
+.groupe-champ input,
+.groupe-champ select {
+    width: 100%;
+    padding: 12px;
+    background: #000;
+    border: 1px solid #ef4444;
+    border-radius: 8px;
+    color: white;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+.groupe-champ input:focus,
+.groupe-champ select:focus {
+    border-color: #f87171;
+    outline: none;
+}
+
+.modal-boutons { 
+    display: flex; 
+    gap: 12px; 
+    margin-top: 8px; 
+}
+
+.modal-boutons button {
+    flex: 1;
+    padding: 12px;
+    border: 0;
+    border-radius: 8px;
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btn-ajouter { background: #dc2626; }
+.btn-ajouter:hover { background: #991b1b; }
+.btn-annuler { background: #500707; }
+.btn-annuler:hover { background: #7f1d1d; }

@@ -19,5 +19,47 @@
     <!-- HEADER -->
 
     <div id="header"></div>
-    <script type="module" src="../DOM/main.js"></script>
+    <script type="module" src="../DOM/main.js"></script><!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tachkila | Composition</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="../style/composition.css">
+    <script type="module" src="../DOM/composition.js"></script>
+</head>
+<body class="min-h-screen flex flex-col gap-3 bg-black p-2 font-sans text-red-50 md:p-5">
+    <div id="header"></div>
+
+    <div class="flex min-h-0 flex-1 flex-col gap-3 md:h-[calc(100vh-120px)] md:flex-row md:overflow-hidden">
+        <aside class="flex w-full flex-col gap-3 overflow-x-hidden rounded border border-red-500 bg-black p-3 md:h-full md:w-[280px] md:shrink-0 md:overflow-y-auto">
+            <div class="flex items-center justify-between gap-2 rounded border border-red-500 p-3 text-xs font-semibold">
+                <h2>Effectif</h2>
+                <span id="nombre-joueurs" class="rounded border border-red-500 p-2 text-white">0 joueur(s)</span>
+            </div>
+            <p class="rounded border border-red-900 p-3 text-xs text-slate-400">Choisissez une position pour chaque joueur. Une position ne peut être occupée que par un seul joueur.</p>
+            <div id="message-position" class="message-position" hidden></div>
+            <div id="message-post" class="message-post" hidden></div>
+            <div id="liste-joueurs" class="flex flex-col gap-2"></div>
+        </aside>
+
+        <main class="min-h-[550px] min-w-0 flex-1 overflow-auto rounded border border-red-500 bg-black p-2 md:p-4">
+            <div class="terrain">
+                <div class="Gardien"><h3>GB - Gardien</h3></div>
+                <div class="Défenseur-gauche"><h3>Défenseur gauche</h3></div>
+                <div class="Défenseur-central-1"><h3>Défenseur central 1</h3></div>
+                <div class="Défenseur-central-2"><h3>Défenseur central 2</h3></div>
+                <div class="Défenseur-droit"><h3>Défenseur droit</h3></div>
+                <div class="Milieu-gauche"><h3>Milieu gauche</h3></div>
+                <div class="Milieu-central-1"><h3>Milieu central 1</h3></div>
+                <div class="Milieu-central-2"><h3>Milieu central 2</h3></div>
+                <div class="Milieu-droit"><h3>Milieu droit</h3></div>
+                <div class="Buteur-1"><h3>Buteur 1</h3></div>
+                <div class="Buteur-2"><h3>Buteur 2</h3></div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
 </body>
