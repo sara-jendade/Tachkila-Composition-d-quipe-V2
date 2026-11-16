@@ -21,3 +21,18 @@ Les modules ES6 ne fonctionnent pas en ouvrant le fichier directement : il faut 
 ## Remarque
 
 Une connexion internet est nécessaire pour charger le script Tailwind présent dans les pages HTML (comme dans la V1).
+
+
+# jira :
+
+https://sarajendade.atlassian.net/jira/software/projects/TASKS/boards/67?filter=&groupBy=none 
+
+# Canva : 
+
+https://canva.link/beu4jww1275yftc
+
+# Deployement : 
+
+https://tachkilav2.netlify.app/
+
+
