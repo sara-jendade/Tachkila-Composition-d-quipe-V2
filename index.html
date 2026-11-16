@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Gestion de l'effectif d'Atlas FC.">
+    <title>Tachkila - Effectif</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="./style/effectif.css">
+    <script type="module" src="./DOM/effectif.js"></script>
+</head>
+<body>
+    <div class="app-shell">
+        <div id="header"></div>
+        <main class="page-content">
+            <section class="page-heading">
+                <div>
+                    <p class="eyebrow">ATLAS FC</p>
+                    <h2>Gestion de l'effectif</h2>
+                    <p class="muted">Ajoutez, modifiez et organisez les joueurs de l'équipe.</p>
+                </div>
+                <button type="button" id="ouvrir" class="primary-button">+ Ajouter un joueur</button>
+
+            </section>
+
+            <p id="message" class="page-message" role="status"></p>
+            <div id="confirmation" class="confirmation"></div>
+
+            <section class="stats-row">
+                <div class="stat-card"><span>Joueurs affichés</span><strong id="nombre-joueurs"></strong></div>
+                <div class="stat-card"><span>Statuts</span><strong id="statistiques"></strong></div>
+            </section>
+
+            <section class="filters">
+                <label for="recherche">Rechercher un joueur</label>
+                <input id="recherche" type="search" placeholder="Nom du joueur...">
+                <label for="filtre-poste">Poste</label>
+                <select id="filtre-poste">
+                    <option value="">Tous les postes</option>
+                    <option value="GB">Gardien</option>
+                    <option value="DEF">Défenseur</option>
+                    <option value="MIL">Milieu</option>
+                    <option value="ATT">Attaquant</option>
+                </select>
+            </section>
+
+            <section id="liste-joueurs" class="players-grid"></section>
+            <div id="pagination" class="pagination"></div>
+        </main>
+    </div>
+
+    <div id="modal-joueur" class="modal" hidden>
+        <div class="modal-contenu" role="dialog" aria-modal="true" aria-labelledby="titre-modal">
+            <div class="modal-header">
+                <h2 id="titre-modal">Ajouter un joueur</h2>
+                <button type="button" id="fermer" class="close-button" aria-label="Fermer">×</button>
+            </div>
+            <form id="form-joueur" novalidate>
+                <div class="form-group">
+                    <label for="nom">Nom</label>
+                    <input id="nom" type="text">
+                    <small id="nom-erreur" class="error-message"></small>
+                </div>
+                <div class="form-group">
+                    <label for="poste">Poste</label>
+                    <select id="poste">
+                        <option value="">Choisir</option>
+                        <option value="GB">Gardien</option>
+                        <option value="DEF">Défenseur</option>
+                        <option value="MIL">Milieu</option>
+                        <option value="ATT">Attaquant</option>
+                    </select>
+                    <small id="poste-erreur" class="error-message"></small>
+                </div>
+                <div class="form-group">
+                    <label for="numero">Numéro</label>
+                    <input id="numero" type="text" inputmode="numeric">
+                    <small id="numero-erreur" class="error-message"></small>
+                </div>
+                <div class="form-group">
+                    <label for="age"> Âge</label>
+                    <input id="age" type="text" inputmode="numeric">
+                    <small id="age-erreur" class="error-message"></small>
+                </div>
+                <div class="form-group">
+                    <label for="statut"> Statut</label>
+                    <select id="statut">
+                        <option value="forme">En forme</option>
+                        <option value="blesse">Blessé</option>
+                    </select>
+                    <small id="statut-erreur" class="error-message"></small>
+                </div>
+                <div class="modal-actions">
+                    <button type="submit" id="bouton-formulaire" class="primary-button">Ajouter</button>
+                    <button type="button" id="annuler" class="secondary-button">Annuler</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
