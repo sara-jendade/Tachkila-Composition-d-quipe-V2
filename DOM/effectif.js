@@ -362,8 +362,6 @@ liste.addEventListener("click", function(event) {
             joueurs[i].capitaine = false;
         }
 
-        joueurs[index].capitaine = true;
-
         sauvegarderjoueurs();
 
         affichermessage("Nouveau capitaine désigné.");
