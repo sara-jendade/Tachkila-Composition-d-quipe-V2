@@ -33,6 +33,12 @@ https://canva.link/beu4jww1275yftc
 
 # Deployement : 
 
+
+# with NETLIFY : 
 https://tachkilav2.netlify.app/
+
+# with VERCEL :
+
+https://tachkilacompositiondquipev2.vercel.app/
 
 
